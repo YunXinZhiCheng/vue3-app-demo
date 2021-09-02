@@ -1,4 +1,12 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+// 导入Vant与Vant样式：导入所有
+import Vant from 'vant';
+import 'vant/lib/index.css';
+
+// 导入amfe-flexible:用于Rem适配
+import 'amfe-flexible'
+
+// 使用Vant组件
+createApp(App).use(Vant).mount('#app')
