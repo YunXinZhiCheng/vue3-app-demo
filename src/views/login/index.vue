@@ -1,5 +1,20 @@
 <template>
-  <div>登录组件</div>
+  <div>
+    <!-- NavBar 导航栏 -->
+    <van-nav-bar title="登录" />
+    <!-- Form 表单 -->
+    <van-form @submit="onSubmit">
+      <!-- 登录密码 -->
+      <van-cell-group inset>
+        <van-field name="userName" placeholder="请输入用户名" />
+        <van-field type="password" name="userPwd" placeholder="请输入密码" />
+      </van-cell-group>
+      <!-- 提交按钮 -->
+      <div style="margin: 16px">
+        <van-button block type="primary" native-type="submit">提交</van-button>
+      </div>
+    </van-form>
+  </div>
 </template>
 
 <script>
