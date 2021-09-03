@@ -36,11 +36,17 @@
 <script>
 import { reactive, toRefs } from 'vue'
 import { Toast } from 'vant'
+// 导入vuex定义的函数容器
+import { useStore } from 'vuex'
+
 // 导入用户请求API
 import { login } from '../../api/user'
 
 // 封装用户登录函数
 function useSubmit(user) {
+  // 使用vuex定义的容器
+  const store = useStore()
+
   // 提交表单
   const onSubmit = async () => {
     // 加载中提示：放在登录之前
@@ -53,6 +59,9 @@ function useSubmit(user) {
     console.log(res.data)
     // 判断返回的内容
     if (res.data.code === 0) {
+      // 登录数据存储到容器中
+      store.commit('setUser', res.data)
+
       // console.log('用户登录成功')
       // 成功提示
       Toast.success('用户登录成功')

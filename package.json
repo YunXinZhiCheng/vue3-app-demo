@@ -13,7 +13,8 @@
     "postcss-pxtorem": "^6.0.0",
     "vant": "^3.2.1",
     "vue": "^3.2.6",
-    "vue-router": "4"
+    "vue-router": "4",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.6.0",
