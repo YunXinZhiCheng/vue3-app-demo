@@ -31,20 +31,30 @@
 
 <script>
 import { reactive, toRefs } from 'vue'
+import { Toast } from 'vant'
 // 导入用户请求API
 import { login } from '../../api/user'
 
 // 封装用户登录函数
 function useSubmit(user) {
   const onSubmit = async () => {
+    // 加载中提示：放在登录之前
+    Toast.loading({
+      message: '登录中...',
+      forbidClick: true,
+    })
     // 调用登录请求API
     const res = await login(user)
     console.log(res.data)
     // 判断返回的内容
     if (res.data.code === 0) {
-      console.log('用户登录成功')
+      // console.log('用户登录成功')
+      // 成功提示
+      Toast.success('用户登录成功')
     } else {
-      console.log('用户名或密码错误')
+      // console.log('用户名或密码错误')
+      // 失败提示
+      Toast.fail('用户名或密码错误')
     }
   }
   return {
