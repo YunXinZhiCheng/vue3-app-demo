@@ -6,12 +6,15 @@
     <van-form @submit="onSubmit">
       <!-- 登录密码 -->
       <van-cell-group inset>
-        <!-- 双向数据绑定：v-model -->
+        <!-- 双向数据绑定：v-model
+             检验规则绑定： rules属性
+         -->
         <van-field
           name="userName"
           placeholder="请输入用户名"
           left-icon="manager"
           v-model="userName"
+          :rules="userFormRules.userName"
         />
         <van-field
           type="password"
@@ -19,6 +22,7 @@
           placeholder="请输入密码"
           left-icon="lock"
           v-model="userPwd"
+          :rules="userFormRules.userPwd"
         />
       </van-cell-group>
       <!-- 登录按钮 -->
@@ -37,6 +41,7 @@ import { login } from '../../api/user'
 
 // 封装用户登录函数
 function useSubmit(user) {
+  // 提交表单
   const onSubmit = async () => {
     // 加载中提示：放在登录之前
     Toast.loading({
@@ -57,8 +62,19 @@ function useSubmit(user) {
       Toast.fail('用户名或密码错误')
     }
   }
+  // 定义表单校验规则
+  const userFormRules = {
+    // 用户名
+    userName: [{ required: true, message: '请输入用户名' }],
+    // 密码
+    userPwd: [
+      { required: true, message: '请输入密码' },
+      { pattern: /^\d{6}$/, message: '密码格式错误' },
+    ],
+  }
   return {
     onSubmit,
+    userFormRules,
   }
 }
 
