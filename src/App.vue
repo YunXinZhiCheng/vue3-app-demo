@@ -8,7 +8,7 @@ export default {
   setup() {
     const store = useStore()
     // 打印已经存储到store容器里面的数据
-    console.log(store.state.user)
+    // console.log(store.state.user)
     return {
       store,
     }
