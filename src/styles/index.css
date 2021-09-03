@@ -6,3 +6,7 @@
 .page-nav-bar .van-nav-bar__title {
   color: #fff;
 }
+/* 页面导航栏里面的箭头图标 */
+.page-nav-bar .van-icon {
+  color: #fff;
+}

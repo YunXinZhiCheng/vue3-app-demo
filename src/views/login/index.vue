@@ -1,7 +1,12 @@
 <template>
   <div>
     <!-- NavBar 导航栏 -->
-    <van-nav-bar title="登录" class="page-nav-bar" />
+    <van-nav-bar title="登录" class="page-nav-bar" >
+      <!-- 插槽 返回箭头 -->
+      <template #left>
+        <van-icon name="cross" size="18" @click="this.$router.back()"></van-icon>
+      </template>
+    </van-nav-bar>
     <!-- Form 表单 -->
     <van-form @submit="onSubmit">
       <!-- 登录密码 -->
