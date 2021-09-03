@@ -8,5 +8,8 @@ import 'vant/lib/index.css';
 // 导入amfe-flexible:用于Rem适配
 import 'amfe-flexible'
 
-// 使用Vant组件
-createApp(App).use(Vant).mount('#app')
+// 导入路由
+import router from './router/index.js'
+
+// 使用Vant组件,use一下：链式编程
+createApp(App).use(Vant).use(router).mount('#app')

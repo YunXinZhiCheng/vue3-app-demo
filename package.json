@@ -12,7 +12,8 @@
     "postcss": "^8.3.6",
     "postcss-pxtorem": "^6.0.0",
     "vant": "^3.2.1",
-    "vue": "^3.2.6"
+    "vue": "^3.2.6",
+    "vue-router": "4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.6.0",
