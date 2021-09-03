@@ -1,0 +1,8 @@
+/* 页面导航栏 */
+.page-nav-bar {
+  background-color: #3296fa;
+}
+/* 页面标题字体颜色:覆盖Vant3默认 */
+.page-nav-bar .van-nav-bar__title {
+  color: #fff;
+}

@@ -11,5 +11,8 @@ import 'amfe-flexible'
 // 导入路由
 import router from './router/index.js'
 
+// 导入全局样式
+import './styles/index.css'
+
 // 使用Vant组件,use一下：链式编程
 createApp(App).use(Vant).use(router).mount('#app')
