@@ -16,7 +16,7 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <style>
 .box {
-  width: 200px;
+  width: 750px;
   height: 300px;
   background-color: skyblue;
 }
