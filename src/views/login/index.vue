@@ -35,10 +35,11 @@ import { reactive, toRefs } from 'vue'
 import { login } from '../../api/user'
 
 // 封装用户登录函数
-function userSubmit(user) {
+function useSubmit(user) {
   const onSubmit = async () => {
     // 调用登录请求API
     const res = await login(user)
+    console.log(res.data)
     // 判断返回的内容
     if (res.data.code === 0) {
       console.log('用户登录成功')
@@ -55,17 +56,17 @@ export default {
   setup() {
     // 用户数据
     const user = reactive({
-      userName: '',
-      userPwd: '',
+      userName: 'admin',
+      userPwd: '123456',
     })
 
     return {
       // 正常的方式，返回的是普通数据
-      // uers
+      // user
 
       // 解构的方式，返回响应式数据 toRefs()
       ...toRefs(user),
-      ...userSubmit(),
+      ...useSubmit(user),
     }
   },
 }
